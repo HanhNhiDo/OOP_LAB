@@ -1,3 +1,4 @@
+//6.2
 import java.util.Scanner;
 public class IOfromKeybroad {
 	public static void main(String[] args){
