@@ -19,8 +19,12 @@ public class Book extends Media {
         authors.remove(authorName);
     }
 
+    public ArrayList<String> getAuthors() {
+        return authors;
+    }
+
     @Override
     public String toString() {
-        return "Book - " + super.toString() + " - Authors: " + String.join(", ", authors);
+        return "Book - " + super.toString() + " - Authors: " + authors;
     }
 }

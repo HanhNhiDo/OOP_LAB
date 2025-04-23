@@ -1,34 +1,22 @@
 package hust.soict.hedspi.aims.media;
 
-import hust.soict.hedspi.aims.playable.Playable;
-
-public class DigitalVideoDisc extends Media implements Playable {
-    private static int nbDigitalVideoDiscs = 0;
-    private String director;
-    private int length;
-
+public class DigitalVideoDisc extends Disc implements Playable {
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super(title, category, cost);
-        this.director = director;
-        this.length = length;
-        this.id = ++nbDigitalVideoDiscs;
+        super(title, category, director, length, cost);
     }
-
-    public String getDirector() { return director; }
-    public int getLength() { return length; }
 
     @Override
     public void play() {
-        if (length <= 0) {
-            System.out.println("Cannot play DVD with non-positive length.");
+        if (getLength() > 0) {
+            System.out.println("Playing DVD: " + getTitle());
+            System.out.println("DVD length: " + getLength());
         } else {
-            System.out.println("Playing DVD: " + title);
-            System.out.println("DVD length: " + length);
+            System.out.println("Cannot play. DVD length is non-positive.");
         }
     }
 
     @Override
     public String toString() {
-        return "DVD - " + super.toString() + " - " + director + " - " + length;
+        return "DVD - " + super.toString();
     }
 }

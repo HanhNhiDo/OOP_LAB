@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-import hust.soict.hedspi.aims.playable.Playable;
+import java.util.Objects;
 
 public class Track implements Playable {
     private String title;
@@ -15,20 +15,29 @@ public class Track implements Playable {
     public int getLength() { return length; }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Track)) return false;
+        Track track = (Track) o;
+        return length == track.length && title.equalsIgnoreCase(track.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title.toLowerCase(), length);
+    }
+
+    @Override
     public void play() {
-        if (length <= 0) {
-            System.out.println("Cannot play track with non-positive length.");
+        if (length > 0) {
+            System.out.println("Playing Track: " + title + " - Length: " + length);
         } else {
-            System.out.println("Playing Track: " + title);
-            System.out.println("Track length: " + length);
+            System.out.println("Track cannot be played. Length <= 0");
         }
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o instanceof Track track) {
-            return this.title.equalsIgnoreCase(track.title) && this.length == track.length;
-        }
-        return false;
+    public String toString() {
+        return "Track: " + title + " - Length: " + length;
     }
 }
