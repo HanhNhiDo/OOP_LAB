@@ -1,0 +1,26 @@
+1. So sánh giữa AWT và Swing
+
+1.1 So sánh container cấp cao (Top-level container)
+
+AWT sử dụng lớp Frame làm container cấp cao nhất.
+Swing sử dụng lớp JFrame, đây là phiên bản mở rộng (lightweight) và linh hoạt hơn Frame.
+
+1.2 So sánh tên lớp thành phần (component class names)
+
+Các lớp trong AWT thường có tên như: Label, TextField, Button.
+Các lớp tương ứng trong Swing thường có tiền tố "J": JLabel, JTextField, JButton.
+
+1.3 So sánh xử lý sự kiện (Event-handling)
+
+Cả AWT và Swing đều sử dụng mô hình lắng nghe sự kiện (event-listener model).
+Tuy nhiên, các component trong Swing hỗ trợ nhiều listener hơn và hoạt động tốt hơn với các giao diện hiện đại.
+Ví dụ: JTextField trong Swing có thể dễ dàng kết hợp với ActionListener để xử lý phím Enter.
+
+1.4 So sánh về giao diện hiển thị
+
+Swing có giao diện đẹp hơn, hỗ trợ nhiều style (Look and Feel).
+AWT phụ thuộc vào hệ điều hành nên giao diện đơn giản và cổ điển hơn.
+Swing còn hỗ trợ các hiệu ứng đồ họa tốt hơn AWT.
+
+
+

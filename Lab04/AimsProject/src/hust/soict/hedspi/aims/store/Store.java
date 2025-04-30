@@ -36,4 +36,8 @@ public class Store {
             System.out.println(i++ + ". " + m);
         }
     }
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
 }
