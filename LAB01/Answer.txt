@@ -1,3 +1,0 @@
-//6.1
-Khi chon "Cancel" ket qua hien ra la: "You 've chosen No";
-Thay doi lua chon cua nguoi dung : ChoosingOptionver2.java
