@@ -1,0 +1,30 @@
+package hust.soict.hedspi.aims.screen.manager;
+
+import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.store.Store;
+
+import javax.swing.*;
+
+public class AddBookToStoreScreen extends AddItemToStoreScreen {
+    public AddBookToStoreScreen(Store store) {
+        super(store);
+        setTitle("Add Book");
+    }
+
+    @Override
+    protected void addItem() {
+        try {
+            String title = tfTitle.getText();
+            String category = tfCategory.getText();
+            float cost = Float.parseFloat(tfCost.getText());
+
+            Book book = new Book(title, category, cost);
+            book.addAuthor("Unknown"); // tạm thời
+            store.addMedia(book);
+
+            JOptionPane.showMessageDialog(this, "Book added successfully.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Invalid input!");
+        }
+    }
+}

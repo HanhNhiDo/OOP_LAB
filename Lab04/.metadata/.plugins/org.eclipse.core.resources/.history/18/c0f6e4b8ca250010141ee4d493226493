@@ -1,0 +1,32 @@
+package hust.soict.hedspi.aims.screen.manager;
+
+import hust.soict.hedspi.aims.store.Store;
+import hust.soict.hedspi.aims.media.Media;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class StoreManagerScreen extends JFrame {
+    private Store store;
+
+    public StoreManagerScreen(Store store) {
+        this.store = store;
+
+        // Thiết lập layout
+        Container cp = getContentPane();
+        cp.setLayout(new BorderLayout());
+
+        // Thêm các thành phần vào layout
+        cp.add(createNorth(), BorderLayout.NORTH);
+        cp.add(createCenter(), BorderLayout.CENTER);
+
+        // Cài đặt cửa sổ
+        setTitle("Store Manager");
+        setSize(1024, 768);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    // TODO: Viết các hàm createNorth(), createMenuBar(), createHeader(), createCenter()
+}
