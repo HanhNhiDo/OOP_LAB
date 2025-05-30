@@ -1,4 +1,5 @@
 package hust.soict.hedspi.aims.screen.manager;
+
 import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.aims.store.*;
 import java.awt.*;
@@ -16,11 +17,11 @@ public class AddDVDToStoreScreen extends AddItemToStoreScreen {
     private JTextField directorField;
     private JTextField lengthField;
     private JTextField costField;
-    private JButton addButton; 
+    private JButton addButton;
 
     public AddDVDToStoreScreen(Store store) {
         super(store);
-        addButton = new JButton("Add DVD"); 
+        addButton = new JButton("Add DVD");
 
         titleLabel = new JLabel("Title:");
         categoryLabel = new JLabel("Category:");
@@ -63,8 +64,8 @@ public class AddDVDToStoreScreen extends AddItemToStoreScreen {
 
         DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, director, length, cost);
         store.addMedia(dvd);
-        JOptionPane.showMessageDialog(frame, "DVD added successfully."); 
+        JOptionPane.showMessageDialog(frame, "DVD added successfully.");
         StoreManagerScreen mainFrame = new StoreManagerScreen(store);
     }
-    
+
 }

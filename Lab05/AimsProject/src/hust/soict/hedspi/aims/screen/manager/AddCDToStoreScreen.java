@@ -17,7 +17,7 @@ public class AddCDToStoreScreen extends AddItemToStoreScreen {
     private JTextField directorField;
     private JTextField costField;
     private JTextField lengthField;
-    private JButton addButton; 
+    private JButton addButton;
     public AddCDToStoreScreen(Store store) {
         super(store);
         addButton = new JButton("Add CD"); // Initialize the addButton
@@ -52,7 +52,7 @@ public class AddCDToStoreScreen extends AddItemToStoreScreen {
         panel.add(artistLabel);
         panel.add(artistField);
 
-        panel.add(directorLabel); 
+        panel.add(directorLabel);
         panel.add(directorField);
 
         panel.add(costLabel);
@@ -60,7 +60,7 @@ public class AddCDToStoreScreen extends AddItemToStoreScreen {
 
         panel.add(lengthLabel);
         panel.add(lengthField);
-        
+
         panel.add(addButton);
         frame.add(panel, BorderLayout.CENTER); // Thêm JPanel vào cửa sổ frame
         addButton.addActionListener(e -> addItemToStore()); // Xử lý sự
@@ -75,10 +75,10 @@ public class AddCDToStoreScreen extends AddItemToStoreScreen {
         float cost = Float.parseFloat(costField.getText());
         int length = Integer.parseInt(lengthField.getText());
 
-        CompactDisc cd = new CompactDisc(title, category, cost ,artist);
+        CompactDisc cd = new CompactDisc(title, category, director,artist,length, cost);
         store.addMedia(cd);
         JOptionPane.showMessageDialog(frame, "CD added successfully."); // Thông báo khi sách được thêm
         StoreManagerScreen mainFrame = new StoreManagerScreen(store);
     }
-    
+
 }
