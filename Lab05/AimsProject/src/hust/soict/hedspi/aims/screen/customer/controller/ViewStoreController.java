@@ -31,7 +31,7 @@ public class ViewStoreController {
     void btnViewCartPressed(ActionEvent event) {
         // Implement the action to view the cart here
         try {
-            final String FXML_CART_PATH = "/hedspi/aims/screen/customer/view/Cart.fxml";
+            final String FXML_CART_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Cart.fxml";
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML_CART_PATH));
             fxmlLoader.setController(new CartController(cart, store));
             Parent root = fxmlLoader.load();
@@ -46,7 +46,7 @@ public class ViewStoreController {
 
     @FXML
     public void initialize() {
-        final String FXML_ITEM_PATH = "/hedspi/aims/screen/customer/view/Item.fxml";
+        final String FXML_ITEM_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Item.fxml";
         int column = 0;
         int row = 1;
         for (int i = 0; i < store.getItemsInStore().size(); i++) {

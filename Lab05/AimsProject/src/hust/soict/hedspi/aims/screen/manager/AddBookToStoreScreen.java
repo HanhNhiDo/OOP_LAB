@@ -1,5 +1,4 @@
 package hust.soict.hedspi.aims.screen.manager;
-
 import javax.swing.*;
 import java.awt.*;
 import hust.soict.hedspi.aims.media.*;
@@ -20,7 +19,7 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
     public AddBookToStoreScreen(Store store) {
         super(store);
         addButton = new JButton("Add Book");
-        
+
         titleLabel = new JLabel("Title:");
         categoryLabel = new JLabel("Category:");
         authorLabel = new JLabel("Author:");
@@ -62,10 +61,10 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
         String author = authorField.getText();
         float cost = Float.parseFloat(costField.getText());
         int token = Integer.parseInt(tokenField.getText());
-        Book book = new Book(title, category, cost);
+        Book book = new Book(title, category, author, cost, token);
         store.addMedia(book);
         JOptionPane.showMessageDialog(frame, "Book added successfully."); // Thông báo khi sách được thêm
         StoreManagerScreen mainFrame = new StoreManagerScreen(store);
     }
-    
+
 }
